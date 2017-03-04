@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9C8BBD271E6B236300C295B5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8BBD261E6B236300C295B5 /* CoreData.framework */; };
 		9C8BBD2A1E6B237B00C295B5 /* BookCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C8BBD281E6B237B00C295B5 /* BookCoreData.xcdatamodeld */; };
+		9C8BBD2D1E6B2F9B00C295B5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8BBD2C1E6B2F9B00C295B5 /* CoreDataManager.swift */; };
 		ED07720F1D595AE60074331F /* AsyncData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07720E1D595AE60074331F /* AsyncData.swift */; };
 		ED0788C21D60D8F200C4773C /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0788C11D60D8F200C4773C /* Tags.swift */; };
 		ED0788C31D60D8F200C4773C /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0788C11D60D8F200C4773C /* Tags.swift */; };
@@ -69,6 +70,7 @@
 /* Begin PBXFileReference section */
 		9C8BBD261E6B236300C295B5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9C8BBD291E6B237B00C295B5 /* BookCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookCoreData.xcdatamodel; sourceTree = "<group>"; };
+		9C8BBD2C1E6B2F9B00C295B5 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = "../../../../../../KC-PracticaiOSAvanzado/HackerBooksLite/App/Managers/CoreDataManager.swift"; sourceTree = "<group>"; };
 		ED07720E1D595AE60074331F /* AsyncData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncData.swift; sourceTree = "<group>"; };
 		ED0788C11D60D8F200C4773C /* Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		ED0788C41D60E07D00C4773C /* TagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 				9C8BBD261E6B236300C295B5 /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C8BBD2B1E6B2F7F00C295B5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9C8BBD2C1E6B2F9B00C295B5 /* CoreDataManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		ED4908A21D5D02BA00212410 /* Model */ = {
@@ -275,6 +285,7 @@
 		EDEFFBD51D35AAA700A5E75C /* App */ = {
 			isa = PBXGroup;
 			children = (
+				9C8BBD2B1E6B2F7F00C295B5 /* Managers */,
 				EDA79C591D66A226001A27F7 /* Controllers */,
 				ED4908A21D5D02BA00212410 /* Model */,
 				EDEFFBD71D35AAF300A5E75C /* NetworkUtils */,
@@ -465,6 +476,7 @@
 				EDA79C581D66A219001A27F7 /* LibraryViewController.swift in Sources */,
 				EDB3AE841D6ACAE80023A807 /* BookViewController.swift in Sources */,
 				EDA79C571D66A219001A27F7 /* Controllers.swift in Sources */,
+				9C8BBD2D1E6B2F9B00C295B5 /* CoreDataManager.swift in Sources */,
 				ED8E54011D359AB100DD8F94 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
