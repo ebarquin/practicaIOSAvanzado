@@ -4,44 +4,44 @@
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="modificationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="annotations" inverseEntity="Book" syncable="YES"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookCoreData" inverseName="annotations" inverseEntity="BookCoreData" syncable="YES"/>
         <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AnnotationPhoto" inverseName="annotations" inverseEntity="AnnotationPhoto" syncable="YES"/>
     </entity>
     <entity name="AnnotationPhoto" representedClassName="AnnotationPhoto" syncable="YES" codeGenerationType="class">
         <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="annotations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Annotation" inverseName="photo" inverseEntity="Annotation" syncable="YES"/>
     </entity>
-    <entity name="Author" representedClassName="Author" syncable="YES" codeGenerationType="class">
+    <entity name="AuthorCoreData" representedClassName="AuthorCoreData" syncable="YES" codeGenerationType="class">
         <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="authors" inverseEntity="Book" syncable="YES"/>
+        <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BookCoreData" inverseName="authors" inverseEntity="BookCoreData" syncable="YES"/>
     </entity>
-    <entity name="Book" representedClassName="Book" syncable="YES" codeGenerationType="class">
+    <entity name="BookCoreData" representedClassName="BookCoreData" syncable="YES" codeGenerationType="class">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="annotations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Annotation" inverseName="book" inverseEntity="Annotation" syncable="YES"/>
-        <relationship name="authors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Author" inverseName="books" inverseEntity="Author" syncable="YES"/>
+        <relationship name="authors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AuthorCoreData" inverseName="books" inverseEntity="AuthorCoreData" syncable="YES"/>
         <relationship name="coverPhoto" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookCoverPhoto" inverseName="book" inverseEntity="BookCoverPhoto" syncable="YES"/>
-        <relationship name="pdf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PDF" inverseName="book" inverseEntity="PDF" syncable="YES"/>
+        <relationship name="pdf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PDFCoreData" inverseName="book" inverseEntity="PDFCoreData" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BookTag" inverseName="books" inverseEntity="BookTag" syncable="YES"/>
     </entity>
     <entity name="BookCoverPhoto" representedClassName="BookCoverPhoto" syncable="YES" codeGenerationType="class">
         <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="remoteURLString" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="coverPhoto" inverseEntity="Book" syncable="YES"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookCoreData" inverseName="coverPhoto" inverseEntity="BookCoreData" syncable="YES"/>
     </entity>
     <entity name="BookTag" representedClassName="BookTag" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="tags" inverseEntity="Book" syncable="YES"/>
+        <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BookCoreData" inverseName="tags" inverseEntity="BookCoreData" syncable="YES"/>
     </entity>
-    <entity name="PDF" representedClassName="PDF" syncable="YES" codeGenerationType="class">
+    <entity name="PDFCoreData" representedClassName="PDFCoreData" syncable="YES" codeGenerationType="class">
         <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="urlString" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="pdf" inverseEntity="Book" syncable="YES"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookCoreData" inverseName="pdf" inverseEntity="BookCoreData" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Book" positionX="-36" positionY="0" width="128" height="133"/>
-        <element name="Author" positionX="-279" positionY="-0" width="128" height="73"/>
+        <element name="BookCoreData" positionX="-36" positionY="0" width="128" height="133"/>
+        <element name="AuthorCoreData" positionX="-279" positionY="-0" width="128" height="73"/>
         <element name="BookTag" positionX="214" positionY="162" width="128" height="73"/>
-        <element name="PDF" positionX="-83" positionY="-189" width="128" height="88"/>
+        <element name="PDFCoreData" positionX="-83" positionY="-189" width="128" height="88"/>
         <element name="BookCoverPhoto" positionX="169" positionY="-90" width="128" height="88"/>
         <element name="Annotation" positionX="-225" positionY="270" width="128" height="118"/>
         <element name="AnnotationPhoto" positionX="-425" positionY="225" width="128" height="73"/>
