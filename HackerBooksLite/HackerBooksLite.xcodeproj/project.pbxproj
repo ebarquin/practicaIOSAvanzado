@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C8BBD271E6B236300C295B5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8BBD261E6B236300C295B5 /* CoreData.framework */; };
+		9C8BBD2A1E6B237B00C295B5 /* BookCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C8BBD281E6B237B00C295B5 /* BookCoreData.xcdatamodeld */; };
 		ED07720F1D595AE60074331F /* AsyncData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07720E1D595AE60074331F /* AsyncData.swift */; };
 		ED0788C21D60D8F200C4773C /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0788C11D60D8F200C4773C /* Tags.swift */; };
 		ED0788C31D60D8F200C4773C /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0788C11D60D8F200C4773C /* Tags.swift */; };
@@ -65,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C8BBD261E6B236300C295B5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9C8BBD291E6B237B00C295B5 /* BookCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookCoreData.xcdatamodel; sourceTree = "<group>"; };
 		ED07720E1D595AE60074331F /* AsyncData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncData.swift; sourceTree = "<group>"; };
 		ED0788C11D60D8F200C4773C /* Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		ED0788C41D60E07D00C4773C /* TagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C8BBD271E6B236300C295B5 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +132,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C8BBD251E6B236200C295B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C8BBD261E6B236300C295B5 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED4908A21D5D02BA00212410 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +147,7 @@
 				ED0788C11D60D8F200C4773C /* Tags.swift */,
 				ED0788CB1D6165A000C4773C /* Library.swift */,
 				EDB3AE681D67A5F70023A807 /* JSONProcessing.swift */,
+				9C8BBD281E6B237B00C295B5 /* BookCoreData.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -145,6 +159,7 @@
 				ED8E54161D359AB100DD8F94 /* HackerBooksLiteTests */,
 				ED8E54211D359AB100DD8F94 /* HackerBooksLiteUITests */,
 				ED8E53FE1D359AB100DD8F94 /* Products */,
+				9C8BBD251E6B236200C295B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -443,6 +458,7 @@
 				EDB3AE881D6BC7890023A807 /* BookTableViewCell.swift in Sources */,
 				ED3B1E0B1D6E5A690000A7C6 /* PDFViewController.swift in Sources */,
 				EDC9E17D1D4AA2A800E4D047 /* MultiDictionary.swift in Sources */,
+				9C8BBD2A1E6B237B00C295B5 /* BookCoreData.xcdatamodeld in Sources */,
 				ED0788C21D60D8F200C4773C /* Tags.swift in Sources */,
 				ED07720F1D595AE60074331F /* AsyncData.swift in Sources */,
 				EDA79C4A1D63AF98001A27F7 /* Library.swift in Sources */,
@@ -710,6 +726,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9C8BBD281E6B237B00C295B5 /* BookCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9C8BBD291E6B237B00C295B5 /* BookCoreData.xcdatamodel */,
+			);
+			currentVersion = 9C8BBD291E6B237B00C295B5 /* BookCoreData.xcdatamodel */;
+			path = BookCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ED8E53F51D359AB100DD8F94 /* Project object */;
 }
