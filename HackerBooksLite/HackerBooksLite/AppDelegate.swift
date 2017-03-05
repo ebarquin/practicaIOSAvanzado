@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         injectContextToFirstViewController()
 
         
-        //testZone()
+
         
         
         //Dsiplay
@@ -37,14 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         guard let context = self.context else { return }
         saveContext(context: context)
     }
-    /*
-    func testZone() {
-        let myBook: BookCoreData = BookCoreData(context: self.context!)
-        myBook.title = "Book Title"
-        
-        saveContext(context: context!)
-    }*/
- 
+
     func injectContextToFirstViewController() {
         if let navController = window?.rootViewController as? UINavigationController,
             let initialViewController = navController.topViewController as? LibraryViewController

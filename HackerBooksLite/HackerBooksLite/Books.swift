@@ -5,7 +5,7 @@
 //  Created by Fernando Rodríguez Romero on 8/11/16.
 //  Copyright © 2016 KeepCoding. All rights reserved.
 //
-
+import CoreData
 import UIKit
 
 // Use typealias early. It provides extra information to the reader.
@@ -34,7 +34,8 @@ class Book{
     var title : Title{
         return _title
     }
-
+    
+    public var context : NSManagedObjectContext?
     
     init(title: Title, authors: Authors,
          tags: Tags, pdf: PDF, image: Image) {
@@ -56,6 +57,47 @@ class Book{
     
     func formattedListOfTags() -> String{
         return _tags.sorted().map{$0._name}.joined(separator: ", ").capitalized
+    }
+    
+    
+    
+    func BookToBookCoreData(book: Book) -> BookCoreData {
+        let BookData = BookCoreData()
+        
+        //title
+        BookData.title = self.title
+        
+        //author
+        for author in _authors {
+            let authorData = AuthorCoreData(context: context!)
+            authorData.fullName = author
+            
+            authorData.addToBooks(BookData)
+            BookData.authors?.adding(authorData)
+        }
+        
+        //tag
+        for tag in _tags {
+            let tagData = BookTag(context: context!)
+            tagData.name = String(describing: tag)
+            
+            tagData.addToBooks(BookData)
+            BookData.tags?.adding(tagData)
+        }
+        
+        //CoverPhoto
+        let coverPhoto = BookCoverPhoto(context: context!)
+        coverPhoto.remoteURLString = self._pdf.url.absoluteString
+        
+
+        
+        
+        //pdf
+        let pdf = PDFCoreData(context: context!)
+        pdf.urlString = self._image.url.absoluteString
+        
+
+        return BookData
     }
     
     
@@ -198,6 +240,8 @@ extension Book: AsyncDataDelegate{
     func asyncData(_ sender: AsyncData, didFailLoadingFrom url: URL, error: NSError){
         print("Error loading \(url).\n \(error)")
     }
+    
+
 }
 
 
