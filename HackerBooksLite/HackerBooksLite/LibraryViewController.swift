@@ -1,15 +1,10 @@
-//
-//  LibraryViewController.swift
-//  HackerBooksLite
-//
-//  Created by Fernando Rodríguez Romero on 8/17/16.
-//  Copyright © 2016 KeepCoding. All rights reserved.
-//
 
+import CoreData
 import UIKit
 
 class LibraryViewController: UITableViewController {
 
+    var context : NSManagedObjectContext?
     private
     let _model : Library
     

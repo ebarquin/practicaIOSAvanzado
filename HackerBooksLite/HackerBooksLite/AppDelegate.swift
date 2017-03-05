@@ -11,7 +11,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        //Clean up all local caches
         AsyncData.removeAllLocalFiles()
+        
         
         
         let container = persistentContainer(dbName: "BookCoreData") { (error: NSError) in
@@ -19,9 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         }
         
         self.context = container.viewContext
+        injectContextToFirstViewController()
 
         
         //testZone()
+        
+        
+        //Dsiplay
+        window?.makeKeyAndVisible()
         
         return true
     }
@@ -37,6 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         saveContext(context: context!)
     }*/
+ 
+    func injectContextToFirstViewController() {
+        if let navController = window?.rootViewController as? UINavigationController,
+            let initialViewController = navController.topViewController as? LibraryViewController
+        {
+            initialViewController.context = self.context
+        }
+    }
     
     
 
