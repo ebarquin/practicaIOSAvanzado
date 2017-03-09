@@ -35,7 +35,6 @@ class Book{
         return _title
     }
     
-    public var context : NSManagedObjectContext?
     
     init(title: Title, authors: Authors,
          tags: Tags, pdf: PDF, image: Image) {
@@ -58,48 +57,7 @@ class Book{
     func formattedListOfTags() -> String{
         return _tags.sorted().map{$0._name}.joined(separator: ", ").capitalized
     }
-    
-    
-    
-    func BookToBookCoreData(book: Book) -> BookCoreData {
-        let BookData = BookCoreData()
-        
-        //title
-        BookData.title = self.title
-        
-        //author
-        for author in _authors {
-            let authorData = AuthorCoreData(context: context!)
-            authorData.fullName = author
-            
-            authorData.addToBooks(BookData)
-            BookData.authors?.adding(authorData)
-        }
-        
-        //tag
-        for tag in _tags {
-            let tagData = BookTag(context: context!)
-            tagData.name = String(describing: tag)
-            
-            tagData.addToBooks(BookData)
-            BookData.tags?.adding(tagData)
-        }
-        
-        //CoverPhoto
-        let coverPhoto = BookCoverPhoto(context: context!)
-        coverPhoto.remoteURLString = self._pdf.url.absoluteString
-        
 
-        
-        
-        //pdf
-        let pdf = PDFCoreData(context: context!)
-        pdf.urlString = self._image.url.absoluteString
-        
-
-        return BookData
-    }
-    
     
 }
 
