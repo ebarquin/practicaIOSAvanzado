@@ -7,10 +7,17 @@
 //
 
 import Foundation
+typealias ErrorClosure = (Error) -> Void
 
 class GetBooksFromJSONFileManager {
     
-    func getBooksFromJSONFile (jsonURL: String, completion:([Book]) -> Void, onError: (Error) -> Void) {
+    func getBooksFromJSONFile (jsonURL: String, completion:([Book]) -> Void) {
+        self.getBooksFromJSONFile(jsonURL: jsonURL, completion: completion, onError: nil)
+        
+    }
+    
+    
+    func getBooksFromJSONFile (jsonURL: String, completion:([Book]) -> Void, onError: ErrorClosure? = nil) {
         
         do{
             guard let url = Bundle.main.url(forResource: "books_readable", withExtension: "json") else{
@@ -27,6 +34,9 @@ class GetBooksFromJSONFileManager {
             
         }catch {
             fatalError("Error while loading model")
+            if let errorClosure = onError {
+                errorClosure(error)
+            }
         }
         
     }
