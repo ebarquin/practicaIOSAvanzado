@@ -10,7 +10,7 @@ class LibraryViewController: UITableViewController {
     
     
     var delegate : LibraryViewControllerDelegate?
-    
+    let tagFetchRequest: NSFetchRequest<BookTag> = BookTag.fetchRequest()
     
     //MARK: - Init & Lifecycle
     init(model: Library, style : UITableViewStyle = .plain) {
@@ -50,7 +50,14 @@ class LibraryViewController: UITableViewController {
     //MARK: - Data Source
     override
     func numberOfSections(in tableView: UITableView) -> Int {
-        return _model.tags.count
+        
+        do{
+            let result = try self.context?.fetch(tagFetchRequest)
+            return (result?.count)!
+        } catch {
+            return 0
+        }
+       
     }
     
     override
