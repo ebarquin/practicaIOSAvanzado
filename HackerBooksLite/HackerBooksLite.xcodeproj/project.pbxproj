@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C2445321E7AEFF600B6BAFA /* PersistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2445311E7AEFF600B6BAFA /* PersistInteractor.swift */; };
+		9C2445341E7BE12C00B6BAFA /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2445331E7BE12C00B6BAFA /* TypeAlias.swift */; };
 		9C2E43C41E701086002D8868 /* BookDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E43C31E701086002D8868 /* BookDataMapper.swift */; };
 		9C67B4501E7860AF00663156 /* GetBooksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67B44F1E7860AF00663156 /* GetBooksInteractor.swift */; };
-		9C67B4521E78683400663156 /* GetBooksFromJSONFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67B4511E78683400663156 /* GetBooksFromJSONFileManager.swift */; };
+		9C67B4521E78683400663156 /* GetBooksFromJSONFileManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67B4511E78683400663156 /* GetBooksFromJSONFileManagerImpl.swift */; };
 		9C8BBD271E6B236300C295B5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8BBD261E6B236300C295B5 /* CoreData.framework */; };
 		9C8BBD2A1E6B237B00C295B5 /* BookCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C8BBD281E6B237B00C295B5 /* BookCoreData.xcdatamodeld */; };
 		9C8BBD301E6B36F800C295B5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8BBD2F1E6B36F800C295B5 /* CoreDataManager.swift */; };
@@ -79,9 +81,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C2445311E7AEFF600B6BAFA /* PersistInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistInteractor.swift; sourceTree = "<group>"; };
+		9C2445331E7BE12C00B6BAFA /* TypeAlias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		9C2E43C31E701086002D8868 /* BookDataMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDataMapper.swift; sourceTree = "<group>"; };
 		9C67B44F1E7860AF00663156 /* GetBooksInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBooksInteractor.swift; sourceTree = "<group>"; };
-		9C67B4511E78683400663156 /* GetBooksFromJSONFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBooksFromJSONFileManager.swift; sourceTree = "<group>"; };
+		9C67B4511E78683400663156 /* GetBooksFromJSONFileManagerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBooksFromJSONFileManagerImpl.swift; sourceTree = "<group>"; };
 		9C8BBD261E6B236300C295B5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9C8BBD291E6B237B00C295B5 /* BookCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookCoreData.xcdatamodel; sourceTree = "<group>"; };
 		9C8BBD2F1E6B36F800C295B5 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				9C67B44F1E7860AF00663156 /* GetBooksInteractor.swift */,
+				9C2445311E7AEFF600B6BAFA /* PersistInteractor.swift */,
 			);
 			name = Interactors;
 			sourceTree = "<group>";
@@ -184,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				9C8BBD2F1E6B36F800C295B5 /* CoreDataManager.swift */,
-				9C67B4511E78683400663156 /* GetBooksFromJSONFileManager.swift */,
+				9C67B4511E78683400663156 /* GetBooksFromJSONFileManagerImpl.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				9C8BBD3A1E6B390200C295B5 /* BookTag+Utils.swift */,
 				9C8BBD3C1E6B392900C295B5 /* Annotation+Utils.swift */,
 				9C8BBD3E1E6B395C00C295B5 /* AnnotationPhoto+Utils.swift */,
+				9C2445331E7BE12C00B6BAFA /* TypeAlias.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -526,11 +532,13 @@
 				ED4908A41D5D02DA00212410 /* Books.swift in Sources */,
 				EDB3AE691D67A5F70023A807 /* JSONProcessing.swift in Sources */,
 				9C8BBD391E6B384600C295B5 /* BookCoverPhoto+Utils.swift in Sources */,
+				9C2445321E7AEFF600B6BAFA /* PersistInteractor.swift in Sources */,
 				EDB3AE881D6BC7890023A807 /* BookTableViewCell.swift in Sources */,
 				9C8BBD3B1E6B390200C295B5 /* BookTag+Utils.swift in Sources */,
 				9C67B4501E7860AF00663156 /* GetBooksInteractor.swift in Sources */,
-				9C67B4521E78683400663156 /* GetBooksFromJSONFileManager.swift in Sources */,
+				9C67B4521E78683400663156 /* GetBooksFromJSONFileManagerImpl.swift in Sources */,
 				9C8BBD301E6B36F800C295B5 /* CoreDataManager.swift in Sources */,
+				9C2445341E7BE12C00B6BAFA /* TypeAlias.swift in Sources */,
 				9C2E43C41E701086002D8868 /* BookDataMapper.swift in Sources */,
 				ED3B1E0B1D6E5A690000A7C6 /* PDFViewController.swift in Sources */,
 				EDC9E17D1D4AA2A800E4D047 /* MultiDictionary.swift in Sources */,

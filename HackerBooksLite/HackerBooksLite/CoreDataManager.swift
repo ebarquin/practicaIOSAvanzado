@@ -20,13 +20,29 @@ public func persistentContainer(dbName: String, onError: ((NSError) -> Void)? = 
     
 
     
-public  func saveContext(context: NSManagedObjectContext) {
+public  func saveContext(context: NSManagedObjectContext, onError: ErrorClosure? = nil) {
     if context.hasChanges {
         do {
             try context.save()
         } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            if let errorClosure = onError {
+                errorClosure(error)
+            }
+            
+        }
+    }
+}
+
+public func saveContext(context: NSManagedObjectContext, onSuccess: (() -> Void), onError: ErrorClosure? = nil) {
+    if context.hasChanges {
+        do {
+            try context.save()
+            onSuccess()
+        } catch {
+            if let errorClosure = onError {
+                errorClosure(error)
+            }
+
         }
     }
 }

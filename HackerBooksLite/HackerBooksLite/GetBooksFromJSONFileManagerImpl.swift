@@ -7,7 +7,6 @@
 //
 
 import Foundation
-typealias ErrorClosure = (Error) -> Void
 
 class GetBooksFromJSONFileManager {
     
